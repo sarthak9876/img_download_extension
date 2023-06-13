@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   var downloadButton = document.getElementById('downloadButton');
   downloadButton.addEventListener('click', function () {
-    var imageUrlInput = document.getElementById('imageUrlInput');
-    var imageUrl = imageUrlInput.value;
-    chrome.runtime.sendMessage({ imageUrl: imageUrl });
+    var urlInput = document.getElementById('urlInput');
+    var typeSelect = document.getElementById('typeSelect');
+    var url = urlInput.value;
+    var type = typeSelect.value;
+    chrome.runtime.sendMessage({ url: url, type: type });
   });
 });
